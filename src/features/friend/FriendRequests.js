@@ -21,6 +21,7 @@ function FriendRequests() {
     (state) => state.friend
   );
   const users = currentPageUsers.map((userId) => usersById[userId]);
+  console.log(users,"users")
   const dispatch = useDispatch();
 
   const handleSubmit = (searchQuery) => {
@@ -29,6 +30,8 @@ function FriendRequests() {
 
   useEffect(() => {
     dispatch(getFriendRequests({ filterName, page }));
+    // dispatch(getUserFriendRequests({ filterName, page }));
+
   }, [filterName, page, dispatch]);
 
   return (
